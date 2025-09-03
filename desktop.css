@@ -5,3 +5,228 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
 }
+
+/* follow-us sention */
+.follow-us-section {
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    grid-template-areas:
+        'yoga1 follow-us yoga2'
+        'follow-us-section-2 follow-us-section-2 follow-us-section-2';
+    grid-gap: 5rem;
+}
+
+.follow-us {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.follow-us h2 {
+    font-family: serif;
+    font-size: 64px;
+    color: #220953
+}
+
+#hashtag {
+    /* 背景にグラデーションを設定 */
+    background-image: linear-gradient(to right, #FF52AF, #9F53FF);
+
+    /* 背景を文字の形に切り抜く */
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    /* 文字色を透明にする */
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    /* 念のため、フォントを太くして見やすくする */
+    font-weight: bold;
+
+}
+
+.follow-yoga-1,
+.follow-yoga-2,
+.follow-yoga-3,
+.follow-yoga-4 {
+    border-radius: 192px;
+    border: 10px solid #E5D9FD;
+}
+
+.follow-yoga-3 {
+    transform: rotate(15deg)
+}
+
+.follow-yoga-4 {
+    transform: rotate(-15deg)
+}
+
+/* grid-area definition */
+.follow-yoga-1 {
+    grid-area: yoga1;
+}
+
+.follow-us {
+    text-align: center;
+    grid-area: follow-us;
+}
+
+.follow-yoga-2 {
+    grid-area: yoga2;
+}
+
+.follow-us-section-2 {
+    display: flex;
+    justify-content: space-between;
+    grid-area: follow-us-section-2;
+}
+
+
+.follow-button {
+    width: 5rem;
+    padding: 1rem;
+    text-align: center;
+    background-image: linear-gradient(to right, #FF52AF, #9F53FF);
+    border-radius: 50%;
+    color: #FFFFFF;
+
+    margin-top: 2rem;
+}
+
+
+/* newsletter-section */
+.newsletter-section {
+    width: 100%;
+    padding: 3rem 15em;
+    text-align: center;
+}
+
+.newsletter-section>div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem;
+    background-image: linear-gradient(to right, #FF52AF, #9F53FF);
+    border-radius: 30px;
+    color: #FFFFFF;
+}
+
+.newsletter-section>div>h3 {
+    font-size: 56px;
+    font-family: serif;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.newsletter-section>div>p {
+    font-family: 'poppins', sans-serif;
+    font-size: 18px;
+}
+
+.email-input {
+    display: flex;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+
+    border-radius: 50px;
+    width: 60%;
+    height: 5rem;
+    margin-top: 2rem;
+    padding: 0rem 1rem;
+}
+
+.email-input input[type=email] {
+    border: none;
+    align-self: center;
+    font-family: 'poppins', sans-serif;
+    color: #A197B4;
+    height: 80%;
+    outline: none;
+
+}
+
+.subscribe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-image: linear-gradient(to right, #FF52AF, #9F53FF);
+    border-radius: 30px;
+    width: 30%;
+    height: 80%;
+    align-self: center;
+    box-shadow: 3px 3px 10px #A197B4;
+}
+
+footer {
+    background-color: #220953;
+    font-family: 'poppins', sans-serif;
+    color: #A197B4;
+    padding: 3rem 12rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 400px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.sub-nav {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    justify-content: space-between;
+    gap: 5rem;
+}
+
+/* We need to fix and globalize this class. */
+.logo {
+    /* 背景にグラデーションを設定 */
+    background-image: linear-gradient(to right, #FF52AF, #9F53FF);
+
+    /* 背景を文字の形に切り抜く */
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    /* 文字色を透明にする */
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    /* 念のため、フォントを太くして見やすくする */
+    font-weight: bold;
+}
+
+.sub-nav>div>h3 {
+    font-family: serif;
+    font-size: 24px;
+    color: #FFFFFF;
+}
+
+.sub-nav>div>*:first-child {
+    margin-bottom: 2rem;
+}
+
+.footer-content hr {
+    width: 100%;
+    border-color: #A197B4;
+}
+
+
+.footer-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.sns-icons ul {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+}
