@@ -1,7 +1,467 @@
+:root {
+    --primary-color: #6a1a7c;
+    --secondary-color: #8c2a9e;
+    --text-color: #333;
+    --light-text-color: #666;
+    --bg-color-light: #f4f2f6;
+    --button-bg: linear-gradient(90deg, #6a1a7c, #8c2a9e);
+    --workout-section-bg: #EAE6FF;
+}
+
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #fff; /* White background for the entire site */
+}
+
+/* Base Styles */
+h1, h2, h3 {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+p {
+    color: var(--light-text-color);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    background: linear-gradient(90deg, #f7669d, #a252e0); /* Pink to purple gradient */
+    color: #fff; /* White text */
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+    border: none; /* Removes the border */
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.arrow {
+    margin-left: 8px;
+    color: #fff; /* White arrow to match the text */
+}
+
+/* Header & Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Aligns items vertically */
+    padding: 20px 80px;
+    background-color: #fff;
+    position: relative;
+    z-index: 1000;
+}
+
+.logo img { /* Targets the image inside the .logo div */
+    height: 40px;
+    width: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.nav-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-icons img {
+    height: 24px;
+    width: 24px;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px 80px;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent; /* Allows the body background to show through */
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero-content h1 {
+    font-size: 4em;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-content .highlight {
+    background: linear-gradient(90deg, #a766c1, #c58ad0);
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 10px;
+    display: inline-block;
+    transform: skew(-10deg);
+}
+
+.hero-content p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.stat-label {
+    font-size: 1em;
+    color: var(--light-text-color);
+}
+
+.hero-image {
+    position: relative;
+    width: 45%;
+}
+
+.hero-image img {
+    width: 100%;
+    display: block;
+    max-width: 500px;
+}
+
+/* Info Section */
+.info-section {
+    padding: 80px;
+    background-color: transparent; /* Allows the body background to show through */
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+}
+
+.info-card {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 350px;
+    background-color: transparent;
+    border-radius: 20px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.card-content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* Left Card */
+.info-card.left-card {
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 50%;
+}
+
+.left-card .info-image-container {
+    flex: 0 0 40%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: -20px;
+}
+
+.left-card .number {
+    font-size: 3em;
+    font-weight: 700;
+    color: #8c2a9e;
+    margin-right: -15px;
+    z-index: 1;
+}
+
+.left-card .info-image-container img {
+    width: 100%;
+    display: block;
+    transform: rotate(5deg);
+}
+
+.left-card .info-text {
+    flex: 1;
+    padding-left: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.left-card .info-text p {
+    flex-grow: 1;
+    max-width: 70%;
+}
+
+.next-btn-gradient {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #f7669d, #a252e0); /* Pink to purple gradient */
+    color: #fff; /* White text */
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+    border: none; /* Removes the border */
+    margin-top: 0;
+}
+
+/* Right Card */
+.info-card.right-card {
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 50%;
+}
+
+.right-card .info-image {
+    flex: 0 0 40%;
+    position: relative;
+    left: 0;
+    width: auto;
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 50px;
+    z-index: 2;
+}
+
+.right-card .info-image img {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    object-fit: contain;
+}
+
+.heart-rate {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    left: auto;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 20px;
+    padding: 5px 10px;
+    box-shadow: none;
+    color: #e03f56;
+    font-weight: 600;
+    z-index: 3;
+}
+
+.heart-icon {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #e03f56;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.right-card .info-content-right {
+    flex: 1;
+    padding-left: 50px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.info-content-right h3 {
+    font-size: 2.5em;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.info-content-right p {
+    margin-bottom: 20px;
+    font-size: 0.95em;
+    max-width: 450px;
+}
+
+.start-btn-gradient {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    background: linear-gradient(90deg, #f7669d, #a252e0); /* Pink to purple gradient */
+    color: #fff; /* White text */
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+    border: none; /* Removes the border */
+    justify-content: center;
+}
+
+.start-btn-gradient:hover {
+    transform: scale(1.05);
+}
+
+.courses-count {
+    margin-top: 15px;
+    text-align: left;
+}
+
+.course-number {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.course-label {
+    font-size: 1em;
+    color: var(--light-text-color);
+    display: block;
+}
+
+/* Workout Section */
+.workout-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px;
+    background-color: transparent; /* Allows the body background to show through */
+    position: relative;
+    overflow: hidden;
+}
+
+.workout-content {
+    max-width: 40%;
+    position: relative;
+    z-index: 2;
+}
+
+.workout-content h2 {
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.workout-content p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    color: var(--light-text-color);
+}
+
+.workout-images-container {
+    position: relative;
+    width: 60%;
+    height: 450px;
+}
+
+.workout-image-top,
+.workout-image-bottom {
+    position: absolute;
+    width: 450px;
+    height: 300px;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.workout-image-top img,
+.workout-image-bottom img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Positioning of the top image */
+.workout-image-top {
+    top: 20px;
+    left: 20px;
+    z-index: 3;
+}
+
+/* Positioning of the bottom image */
+.workout-image-bottom {
+    bottom: 20px;
+    right: 20px;
+    z-index: 1;
+}
+
+/* Badges on top of images */
+.badge-high-quality, .badge-trainer {
+    position: absolute;
+    background-color: #fff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 500;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    z-index: 4;
+}
+
+/* Positioning of badges on top of images */
+.workout-image-top .badge-high-quality {
+    top: 20px;
+    right: 20px;
+    color: var(--primary-color);
+}
+
+.workout-image-bottom .badge-trainer {
+    bottom: 20px;
+    left: 20px;
+    color: var(--primary-color);
+}
+
+.badge-high-quality .icon {
+    font-size: 1.2em;
+    margin-right: 5px;
 }
