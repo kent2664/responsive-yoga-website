@@ -1,4 +1,5 @@
 :root {
+    /* Cores do Tema Claro */
     --primary-color: #6a1a7c;
     --secondary-color: #8c2a9e;
     --text-color: #333;
@@ -9,6 +10,13 @@
     --footer-color-dark: #220953;
     --font-color-dark: #220953;
     --font-color-white: #FFFFFF;
+
+    /* Variáveis para o Tema Escuro */
+    --dark-bg: #220953;
+    --dark-card-bg: #441A82;
+    --dark-text-color: #FFFFFF;
+    --dark-light-text-color: #B5B5B5;
+    --dark-highlight: #C58AD0;
 }
 
 * {
@@ -22,29 +30,32 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: #fff; /* White background for the entire site */
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 /* Base Styles */
 h1, h2, h3 {
     font-weight: 600;
     color: var(--primary-color);
+    transition: color 0.5s ease;
 }
 
 p {
     color: var(--light-text-color);
+    transition: color 0.5s ease;
 }
 
 .btn {
     display: inline-flex;
     align-items: center;
     padding: 12px 24px;
-    background: linear-gradient(90deg, #f7669d, #a252e0); /* Pink to purple gradient */
-    color: #fff; /* White text */
+    background: linear-gradient(90deg, #f7669d, #a252e0);
+    color: #fff;
     border-radius: 30px;
     text-decoration: none;
     font-weight: 500;
     transition: transform 0.3s ease;
-    border: none; /* Removes the border */
+    border: none;
 }
 
 .btn:hover {
@@ -53,21 +64,22 @@ p {
 
 .arrow {
     margin-left: 8px;
-    color: #fff; /* White arrow to match the text */
+    color: #fff;
 }
 
 /* --- Header & Navbar --- */
 .navbar {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Aligns items vertically */
+    align-items: center;
     padding: 20px 80px;
     background-color: #fff;
     position: relative;
     z-index: 1000;
+    transition: background-color 0.5s ease;
 }
 
-.logo img { /* Targets the image inside the .logo div */
+.logo img {
     height: 40px;
     width: auto;
 }
@@ -97,6 +109,8 @@ p {
 .nav-icons img {
     height: 24px;
     width: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 /* --- Hero Section --- */
@@ -107,7 +121,7 @@ p {
     padding: 0 80px 80px;
     position: relative;
     overflow: hidden;
-    background-color: transparent; /* Allows the body background to show through */
+    background-color: transparent;
 }
 
 .hero-content {
@@ -150,11 +164,13 @@ p {
     font-size: 2.5em;
     font-weight: 700;
     color: var(--primary-color);
+    transition: color 0.5s ease;
 }
 
 .stat-label {
     font-size: 1em;
     color: var(--light-text-color);
+    transition: color 0.5s ease;
 }
 
 .hero-image {
@@ -171,7 +187,7 @@ p {
 /* --- Info Section --- */
 .info-section {
     padding: 80px;
-    background-color: transparent; /* Allows the body background to show through */
+    background-color: transparent;
 }
 
 .info-container {
@@ -220,12 +236,12 @@ p {
     color: #8c2a9e;
     margin-right: -15px;
     z-index: 1;
+    transition: color 0.5s ease;
 }
 
 .left-card .info-image-container img {
     width: 100%;
     display: block;
-    transform: rotate(5deg);
 }
 
 .left-card .info-text {
@@ -245,18 +261,36 @@ p {
     max-width: 70%;
 }
 
+/* Estilos para o botão .next-btn-gradient (agora transparente) */
 .next-btn-gradient {
     display: inline-flex;
     align-items: center;
-    padding: 10px 20px;
-    background: linear-gradient(90deg, #f7669d, #a252e0); /* Pink to purple gradient */
-    color: #fff; /* White text */
-    border-radius: 30px;
+    justify-content: center;
+    background: url('./assets/img/Group 13.png') no-repeat center center;
+    background-size: contain; 
+    width: 160px; /* Ajuste para o tamanho ideal */
+    height: 80px;
+    padding: 0;
+    border-radius: 0;
     text-decoration: none;
     font-weight: 500;
     transition: transform 0.3s ease;
-    border: none; /* Removes the border */
-    margin-top: 0;
+    border: none;
+}
+
+/* Dark Mode para o botão transparente */
+#darkmode-toggle:checked ~ main .next-btn-gradient {
+    color: var(--dark-text-color);
+}
+
+.next-btn-gradient .arrow {
+    margin-left: 8px;
+    color: var(--font-color-dark); /* Cor da seta no modo claro */
+}
+
+/* Dark Mode para a seta transparente */
+#darkmode-toggle:checked ~ main .next-btn-gradient .arrow {
+    color: var(--dark-text-color);
 }
 
 /* Right Card */
@@ -301,6 +335,7 @@ p {
     color: #e03f56;
     font-weight: 600;
     z-index: 3;
+    transition: color 0.5s ease;
 }
 
 .heart-icon {
@@ -310,6 +345,7 @@ p {
     background-color: #e03f56;
     border-radius: 50%;
     margin-right: 5px;
+    transition: background-color 0.5s ease;
 }
 
 .right-card .info-content-right {
@@ -338,13 +374,13 @@ p {
     display: inline-flex;
     align-items: center;
     padding: 12px 24px;
-    background: linear-gradient(90deg, #f7669d, #a252e0); /* Pink to purple gradient */
-    color: #fff; /* White text */
+    background: linear-gradient(90deg, #f7669d, #a252e0);
+    color: #fff;
     border-radius: 30px;
     text-decoration: none;
     font-weight: 500;
     transition: transform 0.3s ease;
-    border: none; /* Removes the border */
+    border: none;
     justify-content: center;
 }
 
@@ -361,12 +397,14 @@ p {
     font-size: 1.8em;
     font-weight: 700;
     color: var(--primary-color);
+    transition: color 0.5s ease;
 }
 
 .course-label {
     font-size: 1em;
     color: var(--light-text-color);
     display: block;
+    transition: color 0.5s ease;
 }
 
 /* --- Workout Section --- */
@@ -375,7 +413,7 @@ p {
     align-items: center;
     justify-content: space-between;
     padding: 80px;
-    background-color: transparent; /* Allows the body background to show through */
+    background-color: transparent;
     position: relative;
     overflow: hidden;
 }
@@ -413,6 +451,7 @@ p {
     border-radius: 40px;
     overflow: hidden;
     box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    transition: box-shadow 0.5s ease;
 }
 
 .workout-image-top img,
@@ -449,6 +488,7 @@ p {
     display: flex;
     align-items: center;
     z-index: 4;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
 }
 
 /* Positioning of badges on top of images */
@@ -508,6 +548,7 @@ p {
 .follow-yoga-4 {
     border-radius: 192px;
     border: 10px solid #E5D9FD;
+    transition: border-color 0.5s ease;
 }
 
 .follow-yoga-3 {
@@ -553,7 +594,7 @@ p {
     width: 100%;
     padding: 3rem 15em;
     text-align: center;
-    margin-top: 80px; /* Spacing from the section above */
+    margin-top: 80px;
 }
 
 .newsletter-section > div {
@@ -569,7 +610,7 @@ p {
 
 .newsletter-section h3,
 .newsletter-section p {
-    color: var(--font-color-white); /* Ensures text color is white */
+    color: var(--font-color-white);
 }
 
 .newsletter-section > div > h3 {
@@ -587,6 +628,7 @@ p {
 .email-input {
     display: flex;
     justify-content: space-between;
+    align-items: center; /* Adicionado para alinhar verticalmente */
     background-color: var(--font-color-white);
     border-radius: 50px;
     width: 60%;
@@ -596,12 +638,13 @@ p {
 }
 
 .email-input input[type=email] {
+    flex-grow: 1; /* Adicionado para ocupar o espaço disponível */
     border: none;
-    align-self: center;
     font-family: 'poppins', sans-serif;
     color: #A197B4;
     height: 80%;
     outline: none;
+    background-color: transparent; /* Garante que o input não tenha um fundo */
 }
 
 .subscribe {
@@ -615,19 +658,20 @@ p {
     height: 80%;
     align-self: center;
     box-shadow: 3px 3px 10px #A197B4;
-    color: var(--font-color-white); /* Ensures subscribe text is white */
+    color: var(--font-color-white);
 }
 
 /* --- Footer --- */
 footer {
     background-color: var(--footer-color-dark);
     font-family: 'poppins', sans-serif;
-    color: var(--font-color-white); /* Ensures all footer text is white */
+    color: var(--font-color-white);
     padding: 3rem 12rem;
     position: relative;
     bottom: 0;
     width: 100%;
     height: 400px;
+    transition: background-color 0.5s ease;
 }
 
 .footer-content {
@@ -645,7 +689,6 @@ footer {
 }
 
 .footer-logo h3.logo {
-    /* Style for the 'Yoga' logo in the footer */
     background-image: linear-gradient(to right, #FF52AF, #9F53FF);
     -webkit-background-clip: text;
     background-clip: text;
@@ -658,6 +701,7 @@ footer {
     font-family: serif;
     font-size: 24px;
     color: var(--font-color-white);
+    transition: color 0.5s ease;
 }
 
 .sub-nav > div > *:first-child {
@@ -667,6 +711,7 @@ footer {
 .footer-content hr {
     width: 100%;
     border-color: #A197B4;
+    transition: border-color 0.5s ease;
 }
 
 .footer-links {
@@ -680,7 +725,7 @@ footer {
     gap: 3rem;
     list-style: none;
 }
-.follow-button{
+.follow-button p {
     color: var(--font-color-white);
 }
 /* --- Media Queries for Desktop --- */
@@ -697,4 +742,118 @@ footer {
     .hero-content h1 {
         font-size: 5em;
     }
+}
+
+
+/* --- Dark Mode (CSS Only) --- */
+#darkmode-toggle {
+    display: none;
+}
+
+/* Fundo geral */
+#darkmode-toggle:checked ~ body,
+#darkmode-toggle:checked ~ .navbar,
+#darkmode-toggle:checked ~ main,
+#darkmode-toggle:checked ~ footer {
+    background-color: var(--dark-bg);
+}
+
+/* Textos principais e parágrafos */
+#darkmode-toggle:checked ~ main h1,
+#darkmode-toggle:checked ~ main h2,
+#darkmode-toggle:checked ~ main h3,
+#darkmode-toggle:checked ~ footer h3,
+#darkmode-toggle:checked ~ .newsletter-section h3,
+#darkmode-toggle:checked ~ .newsletter-section p {
+    color: var(--dark-text-color);
+}
+
+#darkmode-toggle:checked ~ main p,
+#darkmode-toggle:checked ~ main .stat-label,
+#darkmode-toggle:checked ~ main .course-label,
+#darkmode-toggle:checked ~ footer p {
+    color: var(--dark-light-text-color);
+}
+
+/* Números e destaques */
+#darkmode-toggle:checked ~ main .stat-number,
+#darkmode-toggle:checked ~ main .number,
+#darkmode-toggle:checked ~ main .course-number {
+    color: var(--dark-highlight);
+}
+
+/* Navbar Links */
+#darkmode-toggle:checked ~ .navbar a {
+    color: var(--dark-text-color);
+}
+
+#darkmode-toggle:checked ~ .navbar a:hover {
+    color: var(--dark-highlight);
+}
+
+/* Ícones e imagens */
+#darkmode-toggle:checked ~ .navbar img,
+#darkmode-toggle:checked ~ footer img {
+    filter: invert(1);
+    transition: filter 0.5s ease;
+}
+
+/* Cards e elementos */
+#darkmode-toggle:checked ~ main .workout-image-top,
+#darkmode-toggle:checked ~ main .workout-image-bottom {
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.15);
+}
+
+#darkmode-toggle:checked ~ main .badge-high-quality,
+#darkmode-toggle:checked ~ main .badge-trainer {
+    background-color: var(--dark-card-bg);
+    color: var(--dark-light-text-color);
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+/* Input de email */
+#darkmode-toggle:checked ~ main .email-input {
+    background-color: var(--dark-card-bg);
+}
+
+#darkmode-toggle:checked ~ main .email-input input[type=email] {
+    background: transparent;
+    color: var(--dark-light-text-color);
+}
+
+#darkmode-toggle:checked ~ main .email-input input[type=email]::placeholder {
+    color: var(--dark-light-text-color);
+    opacity: 0.8;
+}
+
+#darkmode-toggle:checked ~ main .subscribe p {
+    color: var(--font-color-white);
+}
+
+/* Bordas follow yoga */
+#darkmode-toggle:checked ~ .follow-us-section .follow-yoga-1,
+#darkmode-toggle:checked ~ .follow-us-section .follow-yoga-2,
+#darkmode-toggle:checked ~ .follow-us-section .follow-yoga-3,
+#darkmode-toggle:checked ~ .follow-us-section .follow-yoga-4 {
+    border-color: var(--dark-card-bg);
+}
+
+/* Destaques gradiente */
+#darkmode-toggle:checked ~ main .hero-content .highlight {
+    background: var(--dark-highlight);
+    color: var(--dark-bg);
+}
+
+#darkmode-toggle:checked ~ main #hashtag,
+#darkmode-toggle:checked ~ footer .footer-logo h3.logo {
+    -webkit-text-fill-color: var(--dark-highlight);
+    color: var(--dark-highlight);
+}
+
+#darkmode-toggle:checked ~ .navbar h1,
+#darkmode-toggle:checked ~ .navbar h2,
+#darkmode-toggle:checked ~ .navbar h3,
+#darkmode-toggle:checked ~ .navbar p,
+#darkmode-toggle:checked ~ .navbar .nav-links a {
+    color: var(--dark-text-color);
 }
