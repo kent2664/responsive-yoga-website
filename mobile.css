@@ -21,11 +21,14 @@ body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: #fff; /* White background for the entire site */
+    background-color: #fff;
+    /* White background for the entire site */
 }
 
 /* Base Styles */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-weight: 600;
     color: var(--primary-color);
 }
@@ -38,13 +41,16 @@ p {
     display: inline-flex;
     align-items: center;
     padding: 12px 24px;
-    background: linear-gradient(90deg, #f7669d, #a252e0); /* Pink to purple gradient */
-    color: #fff; /* White text */
+    background: linear-gradient(90deg, #f7669d, #a252e0);
+    /* Pink to purple gradient */
+    color: #fff;
+    /* White text */
     border-radius: 30px;
     text-decoration: none;
     font-weight: 500;
     transition: transform 0.3s ease;
-    border: none; /* Removes the border */
+    border: none;
+    /* Removes the border */
 }
 
 .btn:hover {
@@ -53,21 +59,24 @@ p {
 
 .arrow {
     margin-left: 8px;
-    color: #fff; /* White arrow to match the text */
+    color: #fff;
+    /* White arrow to match the text */
 }
 
 /* --- Header & Navbar --- */
 .navbar {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Aligns items vertically */
+    align-items: center;
+    /* Aligns items vertically */
     padding: 5px 20px;
     background-color: #fff;
     position: relative;
     z-index: 1000;
 }
 
-.logo img { /* Targets the image inside the .logo div */
+.logo img {
+    /* Targets the image inside the .logo div */
     height: 20px;
     width: auto;
 }
@@ -109,7 +118,8 @@ p {
     padding: 0 10px;
     position: relative;
     overflow: hidden;
-    background-color: transparent; /* Allows the body background to show through */
+    background-color: transparent;
+    /* Allows the body background to show through */
 }
 
 .hero-content {
@@ -175,7 +185,8 @@ p {
 /* --- Info Section --- */
 .info-section {
     padding: 20px 5px;
-    background-color: transparent; /* Allows the body background to show through */
+    background-color: transparent;
+    /* Allows the body background to show through */
 }
 
 .info-container {
@@ -198,10 +209,16 @@ p {
 
 .card-content-wrapper {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
     height: 100%;
+}
+
+.right-card > .card-content-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    
 }
 
 /* Left Card */
@@ -210,9 +227,11 @@ p {
     background-position: right top;
     background-size: 50%;
 }
+
 .info-image-container {
     width: 100%;
 }
+
 .left-card .info-image-container {
     display: flex;
     justify-content: space-between;
@@ -253,13 +272,16 @@ p {
     display: inline-flex;
     align-items: center;
     padding: 10px 20px;
-    background: linear-gradient(90deg, #f7669d, #a252e0); /* Pink to purple gradient */
-    color: #fff; /* White text */
+    background: linear-gradient(90deg, #f7669d, #a252e0);
+    /* Pink to purple gradient */
+    color: #fff;
+    /* White text */
     border-radius: 30px;
     text-decoration: none;
     font-weight: 500;
     transition: transform 0.3s ease;
-    border: none; /* Removes the border */
+    border: none;
+    /* Removes the border */
     margin-top: 0;
 }
 
@@ -340,13 +362,16 @@ p {
     display: inline-flex;
     align-items: center;
     padding: 12px 24px;
-    background: linear-gradient(90deg, #f7669d, #a252e0); /* Pink to purple gradient */
-    color: #fff; /* White text */
+    background: linear-gradient(90deg, #f7669d, #a252e0);
+    /* Pink to purple gradient */
+    color: #fff;
+    /* White text */
     border-radius: 30px;
     text-decoration: none;
     font-weight: 500;
     transition: transform 0.3s ease;
-    border: none; /* Removes the border */
+    border: none;
+    /* Removes the border */
     justify-content: center;
 }
 
@@ -379,7 +404,8 @@ p {
     justify-content: space-between;
     text-align: center;
     padding: 20px 10px;
-    background-color: transparent; /* Allows the body background to show through */
+    background-color: transparent;
+    /* Allows the body background to show through */
     position: relative;
     overflow: hidden;
 }
@@ -405,51 +431,62 @@ p {
 
 .workout-images-container {
     position: relative;
-    width: 60%;
+    width: 100%;
     height: 450px;
 }
 
 .workout-image-top,
 .workout-image-bottom {
     position: absolute;
-    width: 250px;
+    width: 100%;
     height: 140px;
-    border-radius: 40px;
+    
     overflow: hidden;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    
 }
 
 .workout-image-top img,
 .workout-image-bottom img {
-    width: 100%;
+    width: 60%;
     height: 100%;
-    object-fit: cover;
+    /* object-fit: cover; */
+    border-radius: 75px;
     display: block;
 }
 
 /* Positioning of the top image */
 .workout-image-top {
     top: 20px;
-    left: -60px;
+    left: 20px;
     z-index: 3;
+}
+
+.workout-image-top img{
+    border: 10px solid #E5D9FD;
 }
 
 /* Positioning of the bottom image */
 .workout-image-bottom {
     bottom: 170px;
-    right: -51px;
+}
+
+.workout-image-bottom img{
+    position: absolute;
+    bottom: 0px;
+    right: 50px;
     z-index: 1;
 }
 
 /* Badges on top of images */
-.badge-high-quality, .badge-trainer {
+.badge-high-quality,
+.badge-trainer {
     position: absolute;
     background-color: #fff;
     padding: 8px 15px;
     border-radius: 20px;
     font-size: 0.9em;
     font-weight: 500;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     z-index: 4;
@@ -458,7 +495,7 @@ p {
 /* Positioning of badges on top of images */
 .workout-image-top .badge-high-quality {
     top: 20px;
-    right: 20px;
+    right: 50px;
     color: var(--primary-color);
 }
 
@@ -478,10 +515,13 @@ p {
     width: 100%;
     display: grid;
     justify-content: center;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas:
-        'yoga1 follow-us yoga2'
-        'follow-us-section-2 follow-us-section-2 follow-us-section-2';
-    grid-gap: 5rem;
+        'follow-us follow-us'
+        'yoga1 yoga2'
+        'follow-us-section-2 follow-us-section-2';
+    align-items: center;
+    grid-gap: 1rem;
 }
 
 .follow-us {
@@ -493,7 +533,7 @@ p {
 
 .follow-us h2 {
     font-family: serif;
-    font-size: 64px;
+    font-size: 48px;
     color: var(--font-color-dark);
 }
 
@@ -510,6 +550,7 @@ p {
 .follow-yoga-2,
 .follow-yoga-3,
 .follow-yoga-4 {
+    width: 60%;
     border-radius: 192px;
     border: 10px solid #E5D9FD;
 }
@@ -555,17 +596,18 @@ p {
 /* --- Newsletter Section --- */
 .newsletter-section {
     width: 100%;
-    padding: 3rem 15em;
+    padding: 3rem 2rem;
     text-align: center;
-    margin-top: 80px; /* Spacing from the section above */
+    margin-top: 80px;
+    /* Spacing from the section above */
 }
 
-.newsletter-section > div {
+.newsletter-section>div {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 5rem;
+    padding: 2rem;
     background-image: linear-gradient(to right, #FF52AF, #9F53FF);
     border-radius: 30px;
     color: var(--font-color-white);
@@ -573,17 +615,18 @@ p {
 
 .newsletter-section h3,
 .newsletter-section p {
-    color: var(--font-color-white); /* Ensures text color is white */
+    color: var(--font-color-white);
+    /* Ensures text color is white */
 }
 
-.newsletter-section > div > h3 {
+.newsletter-section>div>h3 {
     font-size: 56px;
     font-family: serif;
     margin-bottom: 2rem;
     width: 100%;
 }
 
-.newsletter-section > div > p {
+.newsletter-section>div>p {
     font-family: 'poppins', sans-serif;
     font-size: 18px;
 }
@@ -619,14 +662,16 @@ p {
     height: 80%;
     align-self: center;
     box-shadow: 3px 3px 10px #A197B4;
-    color: var(--font-color-white); /* Ensures subscribe text is white */
+    color: var(--font-color-white);
+    /* Ensures subscribe text is white */
 }
 
 /* --- Footer --- */
 footer {
     background-color: var(--footer-color-dark);
     font-family: 'poppins', sans-serif;
-    color: var(--font-color-white); /* Ensures all footer text is white */
+    color: var(--font-color-white);
+    /* Ensures all footer text is white */
     padding: 3rem 12rem;
     position: relative;
     bottom: 0;
@@ -664,7 +709,7 @@ footer {
     color: var(--font-color-white);
 }
 
-.sub-nav > div > *:first-child {
+.sub-nav>div>*:first-child {
     margin-bottom: 2rem;
 }
 
@@ -684,12 +729,14 @@ footer {
     gap: 3rem;
     list-style: none;
 }
-.follow-button{
+
+.follow-button {
     color: var(--font-color-white);
 }
+
 /* --- Media Queries for Desktop --- */
 @media screen and (min-width: 1024px) {
-    
+
     .navbar {
         padding: 20px 120px;
     }
