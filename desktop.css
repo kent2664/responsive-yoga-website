@@ -6,6 +6,13 @@
     -moz-box-sizing: border-box;
 }
 
+/* Color Variables */
+:root {
+    --footer-color-dark: #220953;
+    --font-color-dark: #220953;
+    --font-color-white: #FFFFFF;
+}
+
 /* follow-us sention */
 .follow-us-section {
     width: 100%;
@@ -27,7 +34,7 @@
 .follow-us h2 {
     font-family: serif;
     font-size: 64px;
-    color: #220953
+    color: var(--font-color-dark);
 }
 
 #hashtag {
@@ -90,7 +97,7 @@
     text-align: center;
     background-image: linear-gradient(to right, #FF52AF, #9F53FF);
     border-radius: 50%;
-    color: #FFFFFF;
+    color: var(--font-color-white);
 
     margin-top: 2rem;
 }
@@ -111,7 +118,7 @@
     padding: 5rem;
     background-image: linear-gradient(to right, #FF52AF, #9F53FF);
     border-radius: 30px;
-    color: #FFFFFF;
+    color: var(--font-color-white);
 }
 
 .newsletter-section>div>h3 {
@@ -129,7 +136,7 @@
 .email-input {
     display: flex;
     justify-content: space-between;
-    background-color: #FFFFFF;
+    background-color: var(--font-color-white);
 
     border-radius: 50px;
     width: 60%;
@@ -162,7 +169,7 @@
 }
 
 footer {
-    background-color: #220953;
+    background-color: var(--footer-color-dark);
     font-family: 'poppins', sans-serif;
     color: #A197B4;
     padding: 3rem 12rem;
@@ -206,7 +213,7 @@ footer {
 .sub-nav>div>h3 {
     font-family: serif;
     font-size: 24px;
-    color: #FFFFFF;
+    color: var(--font-color-white);
 }
 
 .sub-nav>div>*:first-child {
