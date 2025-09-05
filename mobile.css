@@ -9,6 +9,12 @@
     --footer-color-dark: #220953;
     --font-color-dark: #220953;
     --font-color-white: #FFFFFF;
+
+    --dark-bg: #220953;
+    --dark-card-bg: #441A82;
+    --dark-text-color: #FFFFFF;
+    --dark-light-text-color: #B5B5B5;
+    --dark-highlight: #C58AD0;
 }
 
 * {
@@ -84,6 +90,7 @@ p {
 .nav-links {
     list-style: none;
     display: flex;
+    opacity: 0;
     gap: 10px;
 }
 
@@ -106,7 +113,28 @@ p {
 .nav-icons img {
     height: 24px;
     width: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
+
+.nav-icons img:hover {
+    transform: scale(1.1);
+}
+
+#darkmode-toggle {
+    display: none;
+}
+
+.dark-mode-label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+#sun-icon {
+    display: none;
+}
+
 
 /* --- Hero Section --- */
 .hero {
@@ -133,13 +161,19 @@ p {
     margin-bottom: 20px;
 }
 
+.hero-content .yoga-highlight-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .hero-content .highlight {
     background: linear-gradient(90deg, #a766c1, #c58ad0);
     color: #fff;
     padding: 5px 15px;
     border-radius: 10px;
     display: inline-block;
-    transform: skew(-10deg);
+    transform: rotate(9deg);
 }
 
 .hero-content p {
@@ -271,18 +305,28 @@ p {
 .next-btn-gradient {
     display: inline-flex;
     align-items: center;
-    padding: 10px 20px;
-    background: linear-gradient(90deg, #f7669d, #a252e0);
-    /* Pink to purple gradient */
-    color: #fff;
-    /* White text */
-    border-radius: 30px;
+    justify-content: center;
+    background: url('./assets/img/Group 13.png') no-repeat center center;
+    background-size: contain;
+    width: 300px;
+    height: 160px;
+    padding: 0;
+    border-radius: 0;
     text-decoration: none;
     font-weight: 500;
     transition: transform 0.3s ease;
     border: none;
-    /* Removes the border */
-    margin-top: 0;
+    color: linear-gradient #a252e0;
+}
+
+.next-btn-gradient {
+    /* ... (outras propriedades) ... */
+    color: #a252e0; /* Adicione a cor branca para o texto */
+}
+
+.next-btn-gradient .arrow {
+    margin-left: 8px;
+    color: #a252e0; /* Defina a cor branca para a seta */
 }
 
 /* Right Card */
@@ -764,18 +808,110 @@ footer {
     color: var(--font-color-white);
 }
 
-/* --- Media Queries for Desktop --- */
-@media screen and (min-width: 1024px) {
+/* --- Dark Mode (CSS Only) --- */
+#darkmode-toggle:checked  body {
+    background-color: var(--dark-bg);
+}
 
-    .navbar {
-        padding: 20px 120px;
-    }
+#darkmode-toggle:checked + header .navbar,
+#darkmode-toggle:checked ~ main,
+#darkmode-toggle:checked ~ footer {
+    background-color: var(--dark-bg);
+}
 
-    .hero {
-        flex-direction: row;
-    }
+#darkmode-toggle:checked ~ main h1,
+#darkmode-toggle:checked ~ main h2,
+#darkmode-toggle:checked ~ main h3,
+#darkmode-toggle:checked ~ footer h3,
+#darkmode-toggle:checked ~ .newsletter-section h3,
+#darkmode-toggle:checked ~ .newsletter-section p,
+#darkmode-toggle:checked ~ .navbar h1,
+#darkmode-toggle:checked ~ .navbar h2,
+#darkmode-toggle:checked ~ .navbar h3,
+#darkmode-toggle:checked ~ .navbar p,
+#darkmode-toggle:checked ~ .navbar .nav-links a {
+    color: var(--dark-text-color);
+}
 
-    .hero-content h1 {
-        font-size: 5em;
-    }
+#darkmode-toggle:checked ~ main p,
+#darkmode-toggle:checked ~ main .stat-label,
+#darkmode-toggle:checked ~ main .course-label,
+#darkmode-toggle:checked ~ footer p {
+    color: var(--dark-text-color);
+}
+
+#darkmode-toggle:checked ~ main .stat-number,
+#darkmode-toggle:checked ~ main .number,
+#darkmode-toggle:checked ~ main .course-number {
+    color: var(--dark-highlight);
+}
+
+#darkmode-toggle:checked + header .navbar a {
+    color: var(--dark-text-color);
+}
+
+#darkmode-toggle:checked + header .navbar a:hover {
+    color: var(--dark-highlight);
+}
+
+#darkmode-toggle:checked + header .nav-icons img:not([id="sun-icon"]),
+#darkmode-toggle:checked + header .sns-icons img {
+    filter: invert(1);
+    transition: filter 0.5s ease;
+}
+
+#darkmode-toggle:checked + header .logo img {
+    filter: none;
+}
+
+#darkmode-toggle:checked + header .nav-icons img[src*="ri_moon-line.png"] {
+    display: none;
+}
+
+#darkmode-toggle:checked + header .navbar .nav-icons #sun-icon {
+    display: inline-block !important;
+    filter: none;
+}
+
+#darkmode-toggle:checked ~ main .workout-image-top,
+#darkmode-toggle:checked ~ main .workout-image-bottom {
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.15);
+}
+
+#darkmode-toggle:checked ~ main .email-input {
+    background-color: var(--dark-card-bg);
+}
+
+#darkmode-toggle:checked ~ main .email-input input[type=email] {
+    background: transparent;
+    color: var(--dark-text-color);
+}
+
+#darkmode-toggle:checked ~ main .email-input input[type=email]::placeholder {
+    color: var(--dark-text-color);
+    opacity: 0.8;
+}
+
+#darkmode-toggle:checked ~ main .subscribe p {
+    color: var(--font-color-white);
+}
+
+#darkmode-toggle:checked ~ .follow-us-section .follow-yoga-1,
+#darkmode-toggle:checked ~ .follow-us-section .follow-yoga-2,
+#darkmode-toggle:checked ~ .follow-us-section .follow-yoga-3,
+#darkmode-toggle:checked ~ .follow-us-section .follow-yoga-4 {
+    border-color: var(--dark-card-bg);
+}
+
+#darkmode-toggle:checked ~ main .hero-content .highlight {
+    background: var(--dark-highlight);
+    color: var(--dark-text-color);
+    transform: rotate(9deg);
+}
+
+
+#darkmode-toggle:checked ~ main #hashtag,
+#darkmode-toggle:checked ~ footer .footer-logo h3.logo {
+    -webkit-text-fill-color: var(--dark-highlight);
+    color: var(--dark-text-color);
 }
