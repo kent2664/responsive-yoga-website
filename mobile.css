@@ -179,7 +179,7 @@ p {
 .hero-image img {
     width: 100%;
     display: block;
-    max-width: 374px;
+    max-width: 768px;
 }
 
 /* --- Info Section --- */
@@ -199,7 +199,7 @@ p {
 .info-card {
     position: relative;
     width: 100%;
-    max-width: 374px;
+    max-width: 400px;
     min-height: 350px;
     background-color: transparent;
     border-radius: 20px;
@@ -432,7 +432,7 @@ p {
 .workout-images-container {
     position: relative;
     width: 100%;
-    height: 450px;
+    height: 400px;
 }
 
 .workout-image-top,
@@ -448,7 +448,7 @@ p {
 .workout-image-top img,
 .workout-image-bottom img {
     width: 60%;
-    height: 100%;
+    height: 8.5rem;
     /* object-fit: cover; */
     border-radius: 75px;
     display: block;
@@ -462,7 +462,7 @@ p {
 }
 
 .workout-image-top img{
-    border: 10px solid #E5D9FD;
+    border: 7px solid #FFF;
 }
 
 /* Positioning of the bottom image */
@@ -514,14 +514,15 @@ p {
 .follow-us-section {
     width: 100%;
     display: grid;
-    justify-content: center;
+    padding: 10px 10px;
+    /* justify-content: center;
+    align-items: center; */
+    place-items: center;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas:
         'follow-us follow-us'
         'yoga1 yoga2'
         'follow-us-section-2 follow-us-section-2';
-    align-items: center;
-    grid-gap: 1rem;
 }
 
 .follow-us {
@@ -550,9 +551,10 @@ p {
 .follow-yoga-2,
 .follow-yoga-3,
 .follow-yoga-4 {
-    width: 60%;
+    width: 85%;
     border-radius: 192px;
-    border: 10px solid #E5D9FD;
+    border: 5px solid #E5D9FD;
+    align-self: center;
 }
 
 .follow-yoga-3 {
@@ -566,6 +568,9 @@ p {
 /* Grid-area definition */
 .follow-yoga-1 {
     grid-area: yoga1;
+    position: relative;
+    left: 10px;
+    top: -50px;
 }
 
 .follow-us {
@@ -579,8 +584,25 @@ p {
 
 .follow-us-section-2 {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     grid-area: follow-us-section-2;
+}
+
+.follow-yoga-3 {
+    position: relative;
+    left: -40px;
+    top: -30px;
+}
+
+.follow-yoga-4 {
+    position: relative;
+    left: 30px;
+    top: 20px;
+}
+
+.follow-yoga-3, .follow-yoga-4 {
+    width: 75%;
 }
 
 .follow-button {
@@ -604,6 +626,7 @@ p {
 
 .newsletter-section>div {
     width: 100%;
+    height: 28rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -620,7 +643,7 @@ p {
 }
 
 .newsletter-section>div>h3 {
-    font-size: 56px;
+    font-size: 28px;
     font-family: serif;
     margin-bottom: 2rem;
     width: 100%;
@@ -628,7 +651,7 @@ p {
 
 .newsletter-section>div>p {
     font-family: 'poppins', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .email-input {
@@ -636,10 +659,9 @@ p {
     justify-content: space-between;
     background-color: var(--font-color-white);
     border-radius: 50px;
-    width: 60%;
+    width: 100%;
     height: 5rem;
     margin-top: 2rem;
-    padding: 0rem 1rem;
 }
 
 .email-input input[type=email] {
@@ -649,6 +671,8 @@ p {
     color: #A197B4;
     height: 80%;
     outline: none;
+    position: relative;
+    left: 2rem;
 }
 
 .subscribe {
@@ -658,11 +682,14 @@ p {
     padding: 1rem;
     background-image: linear-gradient(to right, #FF52AF, #9F53FF);
     border-radius: 30px;
-    width: 30%;
-    height: 80%;
+    width: 100%;
     align-self: center;
     box-shadow: 3px 3px 10px #A197B4;
     color: var(--font-color-white);
+    position: relative;
+    top: 80px;
+    left: -250px;
+    flex-shrink: 0;
     /* Ensures subscribe text is white */
 }
 
@@ -672,11 +699,11 @@ footer {
     font-family: 'poppins', sans-serif;
     color: var(--font-color-white);
     /* Ensures all footer text is white */
-    padding: 3rem 12rem;
+    padding: 3rem 2rem;
     position: relative;
     bottom: 0;
     width: 100%;
-    height: 400px;
+    height: 55rem;
 }
 
 .footer-content {
@@ -688,9 +715,9 @@ footer {
 
 .sub-nav {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
     justify-content: space-between;
-    gap: 5rem;
+    gap: 1rem;
 }
 
 .footer-logo h3.logo {
@@ -720,13 +747,16 @@ footer {
 
 .footer-links {
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    flex-direction: column;
     justify-content: space-between;
+    margin-top: 2rem;
+    gap: 2rem;
 }
 
 .sns-icons ul {
     display: flex;
-    gap: 3rem;
+    gap: 2rem;
     list-style: none;
 }
 
