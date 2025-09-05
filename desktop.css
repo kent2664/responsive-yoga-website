@@ -320,13 +320,13 @@ main {
 }
 
 .next-btn-gradient {
-    /* ... (outras propriedades) ... */
-    color: #a252e0; /* Adicione a cor branca para o texto */
+ 
+    color: #a252e0; 
 }
 
 .next-btn-gradient .arrow {
     margin-left: 8px;
-    color: #a252e0; /* Defina a cor branca para a seta */
+    color: #a252e0; 
 }
 
 /* Right Card */
@@ -795,7 +795,7 @@ footer {
     background-color: var(--dark-bg);
 }
 
-#darkmode-toggle:checked ~ .navbar,
+#darkmode-toggle:checked + header .navbar,
 #darkmode-toggle:checked ~ main,
 #darkmode-toggle:checked ~ footer {
     background-color: var(--dark-bg);
@@ -828,29 +828,29 @@ footer {
     color: var(--dark-highlight);
 }
 
-#darkmode-toggle:checked ~ .navbar a {
+#darkmode-toggle:checked + header .navbar a {
     color: var(--dark-text-color);
 }
 
-#darkmode-toggle:checked ~ .navbar a:hover {
+#darkmode-toggle:checked + header .navbar a:hover {
     color: var(--dark-highlight);
 }
 
-#darkmode-toggle:checked ~ .nav-icons img:not([id="sun-icon"]),
-#darkmode-toggle:checked ~ .sns-icons img {
+#darkmode-toggle:checked + header .nav-icons img:not([id="sun-icon"]),
+#darkmode-toggle:checked + header .sns-icons img {
     filter: invert(1);
     transition: filter 0.5s ease;
 }
 
-#darkmode-toggle:checked ~ .navbar .logo img {
+#darkmode-toggle:checked + header .navbar .logo img {
     filter: none;
 }
 
-#darkmode-toggle:checked ~ .navbar .nav-icons img[src*="ri_moon-line.png"] {
+#darkmode-toggle:checked + header .navbar .nav-icons img[src*="ri_moon-line.png"] {
     display: none;
 }
 
-#darkmode-toggle:checked ~ .navbar .nav-icons #sun-icon {
+#darkmode-toggle:checked + header .navbar .nav-icons #sun-icon {
     display: inline-block !important;
     filter: none;
 }
