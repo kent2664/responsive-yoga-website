@@ -883,10 +883,16 @@
     color: var(--font-color-white);
 }
 
-#darkmode-toggle:checked~.follow-us-section .follow-yoga-1,
-#darkmode-toggle:checked~.follow-us-section .follow-yoga-2,
-#darkmode-toggle:checked~.follow-us-section .follow-yoga-3,
-#darkmode-toggle:checked~.follow-us-section .follow-yoga-4 {
+#darkmode-toggle:checked ~ main .workout-section .workout-image-top img,
+#darkmode-toggle:checked ~ main .workout-section .workout-image-bottom img
+{
+    border-color: var(--dark-bg);
+}
+
+#darkmode-toggle:checked ~ main.follow-us-section .follow-yoga-1,
+#darkmode-toggle:checked ~ main.follow-us-section .follow-yoga-2,
+#darkmode-toggle:checked ~ main.follow-us-section .follow-yoga-3,
+#darkmode-toggle:checked ~ main.follow-us-section .follow-yoga-4 {
     border-color: var(--dark-card-bg);
 }
 
