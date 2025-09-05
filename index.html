@@ -13,25 +13,39 @@
 <body>
     <input type="checkbox" id="darkmode-toggle">
     <header>
-    
 
-    <div class="navbar">
-        <div class="logo">
-            <img src="assets/img/Yoga.png" alt="Fitness Logo">
+
+        <div class="navbar">
+            <div class="logo">
+                <img src="assets/img/Yoga.png" alt="Fitness Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services 1</a></li>
+                <li><a href="#">Services 2</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <label for="darkmode-toggle" class="dark-mode-label">
+                    <img src="assets/img/ri_moon-line.png" alt="Dark Mode">
+                    <img id="sun-icon" src="assets/img/ri_sun-line.png" alt="Sun icon" style="display: none;">
+                </label>
+                <label for="menu-checkbox" class="menu-checkbox-container">
+                    <input type="checkbox" id="menu-checkbox">
+                    <img id="menu-icon" src="assets/img/ri_apps-2-line.png" alt="Menu Icon">
+                    <img id="menu-icon-dark" src="assets/img/ri_apps-2-line1.png" alt="Menu Icon Dark">
+                    <div class="menu-dropdown">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Health</a></li>
+                            <li><a href="#">Routine</a></li>
+                            <li><a href="#">Follow</a></li>
+                        </ul>
+                        <img src="assets/img/close.png" alt="Close Icon" class="close-icon">
+                    </div>
+                </label>
+            </div>
         </div>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Services 1</a></li>
-            <li><a href="#">Services 2</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-        <div class="nav-icons">
-            <label for="darkmode-toggle" class="dark-mode-label">
-                <img src="assets/img/ri_moon-line.png" alt="Dark Mode">
-                <img id="sun-icon" src="assets/img/ri_sun-line.png" alt="Sun icon" style="display: none;">
-            </label>
-        </div>
-    </div>
     </header>
 
     <main>

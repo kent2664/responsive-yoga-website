@@ -75,7 +75,7 @@ p {
     justify-content: space-between;
     align-items: center;
     /* Aligns items vertically */
-    padding: 5px 20px;
+    padding: 10px 20px;
     background-color: #fff;
     position: relative;
     z-index: 1000;
@@ -135,6 +135,72 @@ p {
     display: none;
 }
 
+#menu-icon-dark {
+    display: none;
+}
+
+.menu-dropdown {
+    position: absolute;
+    height: 500px;
+    width: 100%;
+    top: 125%;
+    left: 0px;
+    z-index: 2;
+    padding-left: 16px;
+    background-color: #534a4ad8;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-2vh);
+    transition: opacity 0.3s, transform 0.15s;
+}
+
+#menu-checkbox {
+    display: none;
+}
+
+#menu-checkbox:checked~.menu-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.menu-dropdown ul {
+    list-style: none;
+    padding: 10px;
+    color: white;
+    margin: 2rem 1rem;
+}
+
+.menu-dropdown ul li {
+    margin: 3rem 0;
+}
+
+.menu-dropdown a {
+    text-decoration: none;
+    color: var(--text-color);
+    /* font-weight: 500; */
+    transition: color 0.3s;
+}
+
+.menu-checkbox-container {
+    display: flex;
+    align-items: center;
+}
+
+.menu-dropdown ul li:first-child a {
+    background-image: linear-gradient(to right, #FF52AF, #9F53FF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+}
+
+.close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
 
 /* --- Hero Section --- */
 .hero {
@@ -174,6 +240,15 @@ p {
     border-radius: 10px;
     display: inline-block;
     transform: rotate(9deg);
+}
+
+.yoga-sparkle-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    position: relative;
+    right: 18rem;
+    top: 4rem;
 }
 
 .hero-content p {
@@ -249,10 +324,10 @@ p {
     height: 100%;
 }
 
-.right-card > .card-content-wrapper {
+.right-card>.card-content-wrapper {
     display: flex;
     flex-direction: column-reverse;
-    
+
 }
 
 /* Left Card */
@@ -321,12 +396,14 @@ p {
 
 .next-btn-gradient {
     /* ... (outras propriedades) ... */
-    color: #a252e0; /* Adicione a cor branca para o texto */
+    color: #a252e0;
+    /* Adicione a cor branca para o texto */
 }
 
 .next-btn-gradient .arrow {
     margin-left: 8px;
-    color: #a252e0; /* Defina a cor branca para a seta */
+    color: #a252e0;
+    /* Defina a cor branca para a seta */
 }
 
 /* Right Card */
@@ -484,9 +561,9 @@ p {
     position: absolute;
     width: 100%;
     height: 140px;
-    
+
     overflow: hidden;
-    
+
 }
 
 .workout-image-top img,
@@ -505,7 +582,7 @@ p {
     z-index: 3;
 }
 
-.workout-image-top img{
+.workout-image-top img {
     border: 7px solid #FFF;
 }
 
@@ -514,7 +591,7 @@ p {
     bottom: 170px;
 }
 
-.workout-image-bottom img{
+.workout-image-bottom img {
     position: absolute;
     bottom: 0px;
     right: 50px;
@@ -525,7 +602,6 @@ p {
 .badge-high-quality,
 .badge-trainer {
     position: absolute;
-    background-color: #fff;
     padding: 8px 15px;
     border-radius: 20px;
     font-size: 0.9em;
@@ -534,6 +610,26 @@ p {
     display: flex;
     align-items: center;
     z-index: 4;
+    white-space: nowrap;
+    background-color: #fff;
+    color: var(--font-color-dark);
+}
+
+/* Estilo do gradiente para o texto e a borda */
+.badge-high-quality {
+    background-image: linear-gradient(to right, #FF52AF, #9F53FF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: 2px solid transparent;
+}
+
+.badge-trainer {
+    background-image: linear-gradient(to right, #FF52AF, #9F53FF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: 2px solid transparent;
 }
 
 /* Positioning of badges on top of images */
@@ -645,7 +741,8 @@ p {
     top: 20px;
 }
 
-.follow-yoga-3, .follow-yoga-4 {
+.follow-yoga-3,
+.follow-yoga-4 {
     width: 75%;
 }
 
@@ -657,6 +754,10 @@ p {
     border-radius: 50%;
     color: var(--font-color-white);
     margin-top: 2rem;
+}
+
+.follow-button p {
+    color: var(--font-color-white);
 }
 
 /* --- Newsletter Section --- */
@@ -809,109 +910,117 @@ footer {
 }
 
 /* --- Dark Mode (CSS Only) --- */
-#darkmode-toggle:checked  body {
+#darkmode-toggle:checked body {
     background-color: var(--dark-bg);
 }
 
-#darkmode-toggle:checked + header .navbar,
-#darkmode-toggle:checked ~ main,
-#darkmode-toggle:checked ~ footer {
+#darkmode-toggle:checked+header .navbar,
+#darkmode-toggle:checked~main,
+#darkmode-toggle:checked~footer {
     background-color: var(--dark-bg);
 }
 
-#darkmode-toggle:checked ~ main h1,
-#darkmode-toggle:checked ~ main h2,
-#darkmode-toggle:checked ~ main h3,
-#darkmode-toggle:checked ~ footer h3,
-#darkmode-toggle:checked ~ .newsletter-section h3,
-#darkmode-toggle:checked ~ .newsletter-section p,
-#darkmode-toggle:checked ~ .navbar h1,
-#darkmode-toggle:checked ~ .navbar h2,
-#darkmode-toggle:checked ~ .navbar h3,
-#darkmode-toggle:checked ~ .navbar p,
-#darkmode-toggle:checked ~ .navbar .nav-links a {
+#darkmode-toggle:checked~main h1,
+#darkmode-toggle:checked~main h2,
+#darkmode-toggle:checked~main h3,
+#darkmode-toggle:checked~footer h3,
+#darkmode-toggle:checked~.newsletter-section h3,
+#darkmode-toggle:checked~.newsletter-section p,
+#darkmode-toggle:checked~.navbar h1,
+#darkmode-toggle:checked~.navbar h2,
+#darkmode-toggle:checked~.navbar h3,
+#darkmode-toggle:checked~.navbar p,
+#darkmode-toggle:checked~.navbar .nav-links a {
     color: var(--dark-text-color);
 }
 
-#darkmode-toggle:checked ~ main p,
-#darkmode-toggle:checked ~ main .stat-label,
-#darkmode-toggle:checked ~ main .course-label,
-#darkmode-toggle:checked ~ footer p {
+#darkmode-toggle:checked~main p,
+#darkmode-toggle:checked~main .stat-label,
+#darkmode-toggle:checked~main .course-label,
+#darkmode-toggle:checked~footer p {
     color: var(--dark-text-color);
 }
 
-#darkmode-toggle:checked ~ main .stat-number,
-#darkmode-toggle:checked ~ main .number,
-#darkmode-toggle:checked ~ main .course-number {
+#darkmode-toggle:checked~main .stat-number,
+#darkmode-toggle:checked~main .number,
+#darkmode-toggle:checked~main .course-number {
     color: var(--dark-highlight);
 }
 
-#darkmode-toggle:checked + header .navbar a {
+#darkmode-toggle:checked+header .navbar a {
     color: var(--dark-text-color);
 }
 
-#darkmode-toggle:checked + header .navbar a:hover {
+#darkmode-toggle:checked+header .navbar a:hover {
     color: var(--dark-highlight);
 }
 
-#darkmode-toggle:checked + header .nav-icons img:not([id="sun-icon"]),
-#darkmode-toggle:checked + header .sns-icons img {
+#darkmode-toggle:checked+header .nav-icons img:not([id="sun-icon"]),
+#darkmode-toggle:checked+header .sns-icons img {
     filter: invert(1);
     transition: filter 0.5s ease;
 }
 
-#darkmode-toggle:checked + header .logo img {
+#darkmode-toggle:checked+header .logo img {
     filter: none;
 }
 
-#darkmode-toggle:checked + header .nav-icons img[src*="ri_moon-line.png"] {
+#darkmode-toggle:checked+header .nav-icons img[src*="ri_moon-line.png"],
+#darkmode-toggle:checked+header .nav-icons .menu-checkbox-container img[src*="ri_apps-2-line.png"] {
     display: none;
 }
 
-#darkmode-toggle:checked + header .navbar .nav-icons #sun-icon {
+#darkmode-toggle:checked+header .navbar .nav-icons #sun-icon,
+#darkmode-toggle:checked+header .navbar .nav-icons .menu-checkbox-container #menu-icon-dark {
     display: inline-block !important;
     filter: none;
 }
 
-#darkmode-toggle:checked ~ main .workout-image-top,
-#darkmode-toggle:checked ~ main .workout-image-bottom {
+#darkmode-toggle:checked~main .workout-image-top,
+#darkmode-toggle:checked~main .workout-image-bottom {
     box-shadow: 0 15px 30px rgba(255, 255, 255, 0.15);
 }
 
-#darkmode-toggle:checked ~ main .email-input {
+#darkmode-toggle:checked~main .email-input {
     background-color: var(--dark-card-bg);
 }
 
-#darkmode-toggle:checked ~ main .email-input input[type=email] {
+#darkmode-toggle:checked~main .email-input input[type=email] {
     background: transparent;
     color: var(--dark-text-color);
 }
 
-#darkmode-toggle:checked ~ main .email-input input[type=email]::placeholder {
+#darkmode-toggle:checked~main .email-input input[type=email]::placeholder {
     color: var(--dark-text-color);
     opacity: 0.8;
 }
 
-#darkmode-toggle:checked ~ main .subscribe p {
+#darkmode-toggle:checked~main .subscribe p {
     color: var(--font-color-white);
 }
 
-#darkmode-toggle:checked ~ .follow-us-section .follow-yoga-1,
-#darkmode-toggle:checked ~ .follow-us-section .follow-yoga-2,
-#darkmode-toggle:checked ~ .follow-us-section .follow-yoga-3,
-#darkmode-toggle:checked ~ .follow-us-section .follow-yoga-4 {
+#darkmode-toggle:checked~main .workout-section .workout-image-top img,
+#darkmode-toggle:checked~main .workout-section .workout-image-bottom img 
+{
+    border-color: var(--dark-bg);
+}
+
+#darkmode-toggle:checked~main .follow-us-section .follow-yoga-1,
+#darkmode-toggle:checked~main .follow-us-section .follow-yoga-2,
+#darkmode-toggle:checked~main .follow-us-section .follow-yoga-3,
+#darkmode-toggle:checked~main .follow-us-section .follow-yoga-4 {
     border-color: var(--dark-card-bg);
 }
 
-#darkmode-toggle:checked ~ main .hero-content .highlight {
+#darkmode-toggle:checked~main .hero-content .highlight {
     background: var(--dark-highlight);
     color: var(--dark-text-color);
     transform: rotate(9deg);
 }
 
 
-#darkmode-toggle:checked ~ main #hashtag,
-#darkmode-toggle:checked ~ footer .footer-logo h3.logo {
+#darkmode-toggle:checked~main #hashtag,
+#darkmode-toggle:checked~footer .footer-logo h3.logo {
     -webkit-text-fill-color: var(--dark-highlight);
     color: var(--dark-text-color);
 }
