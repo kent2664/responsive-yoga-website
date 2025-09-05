@@ -19,6 +19,7 @@
     --dark-highlight: #C58AD0;
 }
 
+/* Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -29,12 +30,13 @@ body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: #fff; /* White background for the entire site */
+    background-color: #fff;
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-/* Base Styles */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-weight: 600;
     color: var(--primary-color);
     transition: color 0.5s ease;
@@ -113,6 +115,28 @@ p {
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
+.nav-icons img:hover {
+    transform: scale(1.1);
+}
+
+#darkmode-toggle {
+    display: none;
+}
+
+.dark-mode-label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+#sun-icon {
+    display: none;
+}
+
+main {
+    padding: 20px 50px;
+}
+
 /* --- Hero Section --- */
 .hero {
     display: flex;
@@ -135,13 +159,27 @@ p {
     margin-bottom: 20px;
 }
 
+.hero-content .yoga-highlight-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .hero-content .highlight {
     background: linear-gradient(90deg, #a766c1, #c58ad0);
     color: #fff;
     padding: 5px 15px;
     border-radius: 10px;
     display: inline-block;
-    transform: skew(-10deg);
+    transform: rotate(9deg);
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.hero-content .yoga-sparkle-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
 }
 
 .hero-content p {
@@ -234,7 +272,7 @@ p {
     font-size: 3em;
     font-weight: 700;
     color: #8c2a9e;
-    margin-right: -15px;
+    margin-right: 10px;
     z-index: 1;
     transition: color 0.5s ease;
 }
@@ -246,9 +284,8 @@ p {
 
 .left-card .info-text {
     flex: 1;
-    padding-left: 20px;
     text-align: left;
-    display: flex;
+    display: flex; 
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -256,41 +293,40 @@ p {
     z-index: 2;
 }
 
-.left-card .info-text p {
-    flex-grow: 1;
+.left-card .info-text .text-content {
+    margin: 100px; 
     max-width: 70%;
 }
 
-/* Estilos para o botão .next-btn-gradient (agora transparente) */
+.right-card .info-content-right .text-group {
+    padding-left: 50px; 
+}
+
 .next-btn-gradient {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     background: url('./assets/img/Group 13.png') no-repeat center center;
-    background-size: contain; 
-    width: 160px; /* Ajuste para o tamanho ideal */
-    height: 80px;
+    background-size: contain;
+    width: 300px;
+    height: 160px;
     padding: 0;
     border-radius: 0;
     text-decoration: none;
     font-weight: 500;
     transition: transform 0.3s ease;
     border: none;
+    color: linear-gradient #a252e0;
 }
 
-/* Dark Mode para o botão transparente */
-#darkmode-toggle:checked ~ main .next-btn-gradient {
-    color: var(--dark-text-color);
+.next-btn-gradient {
+    /* ... (outras propriedades) ... */
+    color: #a252e0; /* Adicione a cor branca para o texto */
 }
 
 .next-btn-gradient .arrow {
     margin-left: 8px;
-    color: var(--font-color-dark); /* Cor da seta no modo claro */
-}
-
-/* Dark Mode para a seta transparente */
-#darkmode-toggle:checked ~ main .next-btn-gradient .arrow {
-    color: var(--dark-text-color);
+    color: #a252e0; /* Defina a cor branca para a seta */
 }
 
 /* Right Card */
@@ -350,7 +386,7 @@ p {
 
 .right-card .info-content-right {
     flex: 1;
-    padding-left: 50px;
+    padding-left: 100px;
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -408,11 +444,13 @@ p {
 }
 
 /* --- Workout Section --- */
+/* --- Workout Section --- */
 .workout-section {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 80px;
+    gap: 50px;
     background-color: transparent;
     position: relative;
     overflow: hidden;
@@ -420,7 +458,6 @@ p {
 
 .workout-content {
     max-width: 40%;
-    position: relative;
     z-index: 2;
 }
 
@@ -438,20 +475,20 @@ p {
 }
 
 .workout-images-container {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 60%;
     height: 450px;
 }
 
 .workout-image-top,
 .workout-image-bottom {
-    position: absolute;
+    position: relative;
     width: 450px;
     height: 300px;
-    border-radius: 40px;
-    overflow: hidden;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-    transition: box-shadow 0.5s ease;
+    border-radius: 200px;
+    
 }
 
 .workout-image-top img,
@@ -460,53 +497,69 @@ p {
     height: 100%;
     object-fit: cover;
     display: block;
+    border-radius: 200px;
+    border: 10px solid #FFFFFF;
 }
 
-/* Positioning of the top image */
 .workout-image-top {
-    top: 20px;
-    left: 20px;
+    align-self: flex-start;
+    margin-top: 20px;
     z-index: 3;
 }
 
-/* Positioning of the bottom image */
 .workout-image-bottom {
-    bottom: 20px;
-    right: 20px;
-    z-index: 1;
+    align-self: flex-end;
+    margin-top: -100px;
+    z-index: 2;
 }
 
-/* Badges on top of images */
-.badge-high-quality, .badge-trainer {
+.badge-high-quality,
+.badge-trainer {
     position: absolute;
-    background-color: #fff;
     padding: 8px 15px;
     border-radius: 20px;
     font-size: 0.9em;
     font-weight: 500;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     z-index: 4;
-    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+    white-space: nowrap;
+    background-color: #fff;
+    color: var(--font-color-dark);
 }
 
-/* Positioning of badges on top of images */
+/* Estilo do gradiente para o texto e a borda */
+.badge-high-quality {
+    background-image: linear-gradient(to right, #FF52AF, #9F53FF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: 2px solid transparent;
+}
+
+.badge-trainer {
+    background-image: linear-gradient(to right, #FF52AF, #9F53FF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: 2px solid transparent;
+}
+
 .workout-image-top .badge-high-quality {
     top: 20px;
-    right: 20px;
-    color: var(--primary-color);
+    right: -70px;
 }
 
 .workout-image-bottom .badge-trainer {
     bottom: 20px;
-    left: 20px;
-    color: var(--primary-color);
+    left: -70px;
 }
 
 .badge-high-quality .icon {
     font-size: 1.2em;
     margin-right: 5px;
+    color: #FF52AF;
 }
 
 /* --- Follow Us Section --- */
@@ -525,10 +578,11 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    grid-area: follow-us;
 }
 
 .follow-us h2 {
-    font-family: serif;
     font-size: 64px;
     color: var(--font-color-dark);
 }
@@ -559,14 +613,8 @@ p {
     transform: rotate(-15deg);
 }
 
-/* Grid-area definition */
 .follow-yoga-1 {
     grid-area: yoga1;
-}
-
-.follow-us {
-    text-align: center;
-    grid-area: follow-us;
 }
 
 .follow-yoga-2 {
@@ -587,6 +635,10 @@ p {
     border-radius: 50%;
     color: var(--font-color-white);
     margin-top: 2rem;
+}
+
+.follow-button p {
+    color: var(--font-color-white);
 }
 
 /* --- Newsletter Section --- */
@@ -615,20 +667,18 @@ p {
 
 .newsletter-section > div > h3 {
     font-size: 56px;
-    font-family: serif;
     margin-bottom: 2rem;
     width: 100%;
 }
 
 .newsletter-section > div > p {
-    font-family: 'poppins', sans-serif;
     font-size: 18px;
 }
 
 .email-input {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Adicionado para alinhar verticalmente */
+    align-items: center;
     background-color: var(--font-color-white);
     border-radius: 50px;
     width: 60%;
@@ -638,13 +688,13 @@ p {
 }
 
 .email-input input[type=email] {
-    flex-grow: 1; /* Adicionado para ocupar o espaço disponível */
+    flex-grow: 1;
     border: none;
-    font-family: 'poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: #A197B4;
     height: 80%;
     outline: none;
-    background-color: transparent; /* Garante que o input não tenha um fundo */
+    background-color: transparent;
 }
 
 .subscribe {
@@ -654,7 +704,7 @@ p {
     padding: 1rem;
     background-image: linear-gradient(to right, #FF52AF, #9F53FF);
     border-radius: 30px;
-    width: 30%;
+    width: 40%;
     height: 80%;
     align-self: center;
     box-shadow: 3px 3px 10px #A197B4;
@@ -664,7 +714,6 @@ p {
 /* --- Footer --- */
 footer {
     background-color: var(--footer-color-dark);
-    font-family: 'poppins', sans-serif;
     color: var(--font-color-white);
     padding: 3rem 12rem;
     position: relative;
@@ -698,7 +747,6 @@ footer {
 }
 
 .sub-nav h3 {
-    font-family: serif;
     font-size: 24px;
     color: var(--font-color-white);
     transition: color 0.5s ease;
@@ -725,12 +773,9 @@ footer {
     gap: 3rem;
     list-style: none;
 }
-.follow-button p {
-    color: var(--font-color-white);
-}
+
 /* --- Media Queries for Desktop --- */
 @media screen and (min-width: 1024px) {
-    
     .navbar {
         padding: 20px 120px;
     }
@@ -746,25 +791,27 @@ footer {
 
 
 /* --- Dark Mode (CSS Only) --- */
-#darkmode-toggle {
-    display: none;
+#darkmode-toggle:checked ~ body {
+    background-color: var(--dark-bg);
 }
 
-/* Fundo geral */
-#darkmode-toggle:checked ~ body,
 #darkmode-toggle:checked ~ .navbar,
 #darkmode-toggle:checked ~ main,
 #darkmode-toggle:checked ~ footer {
     background-color: var(--dark-bg);
 }
 
-/* Textos principais e parágrafos */
 #darkmode-toggle:checked ~ main h1,
 #darkmode-toggle:checked ~ main h2,
 #darkmode-toggle:checked ~ main h3,
 #darkmode-toggle:checked ~ footer h3,
 #darkmode-toggle:checked ~ .newsletter-section h3,
-#darkmode-toggle:checked ~ .newsletter-section p {
+#darkmode-toggle:checked ~ .newsletter-section p,
+#darkmode-toggle:checked ~ .navbar h1,
+#darkmode-toggle:checked ~ .navbar h2,
+#darkmode-toggle:checked ~ .navbar h3,
+#darkmode-toggle:checked ~ .navbar p,
+#darkmode-toggle:checked ~ .navbar .nav-links a {
     color: var(--dark-text-color);
 }
 
@@ -772,17 +819,15 @@ footer {
 #darkmode-toggle:checked ~ main .stat-label,
 #darkmode-toggle:checked ~ main .course-label,
 #darkmode-toggle:checked ~ footer p {
-    color: var(--dark-light-text-color);
+    color: var(--dark-text-color);
 }
 
-/* Números e destaques */
 #darkmode-toggle:checked ~ main .stat-number,
 #darkmode-toggle:checked ~ main .number,
 #darkmode-toggle:checked ~ main .course-number {
     color: var(--dark-highlight);
 }
 
-/* Navbar Links */
 #darkmode-toggle:checked ~ .navbar a {
     color: var(--dark-text-color);
 }
@@ -791,38 +836,41 @@ footer {
     color: var(--dark-highlight);
 }
 
-/* Ícones e imagens */
-#darkmode-toggle:checked ~ .navbar img,
-#darkmode-toggle:checked ~ footer img {
+#darkmode-toggle:checked ~ .nav-icons img:not([id="sun-icon"]),
+#darkmode-toggle:checked ~ .sns-icons img {
     filter: invert(1);
     transition: filter 0.5s ease;
 }
 
-/* Cards e elementos */
+#darkmode-toggle:checked ~ .navbar .logo img {
+    filter: none;
+}
+
+#darkmode-toggle:checked ~ .navbar .nav-icons img[src*="ri_moon-line.png"] {
+    display: none;
+}
+
+#darkmode-toggle:checked ~ .navbar .nav-icons #sun-icon {
+    display: inline-block !important;
+    filter: none;
+}
+
 #darkmode-toggle:checked ~ main .workout-image-top,
 #darkmode-toggle:checked ~ main .workout-image-bottom {
     box-shadow: 0 15px 30px rgba(255, 255, 255, 0.15);
 }
 
-#darkmode-toggle:checked ~ main .badge-high-quality,
-#darkmode-toggle:checked ~ main .badge-trainer {
-    background-color: var(--dark-card-bg);
-    color: var(--dark-light-text-color);
-    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
-}
-
-/* Input de email */
 #darkmode-toggle:checked ~ main .email-input {
     background-color: var(--dark-card-bg);
 }
 
 #darkmode-toggle:checked ~ main .email-input input[type=email] {
     background: transparent;
-    color: var(--dark-light-text-color);
+    color: var(--dark-text-color);
 }
 
 #darkmode-toggle:checked ~ main .email-input input[type=email]::placeholder {
-    color: var(--dark-light-text-color);
+    color: var(--dark-text-color);
     opacity: 0.8;
 }
 
@@ -830,7 +878,6 @@ footer {
     color: var(--font-color-white);
 }
 
-/* Bordas follow yoga */
 #darkmode-toggle:checked ~ .follow-us-section .follow-yoga-1,
 #darkmode-toggle:checked ~ .follow-us-section .follow-yoga-2,
 #darkmode-toggle:checked ~ .follow-us-section .follow-yoga-3,
@@ -838,22 +885,15 @@ footer {
     border-color: var(--dark-card-bg);
 }
 
-/* Destaques gradiente */
 #darkmode-toggle:checked ~ main .hero-content .highlight {
     background: var(--dark-highlight);
-    color: var(--dark-bg);
+    color: var(--dark-text-color);
+    transform: rotate(9deg);
 }
+
 
 #darkmode-toggle:checked ~ main #hashtag,
 #darkmode-toggle:checked ~ footer .footer-logo h3.logo {
     -webkit-text-fill-color: var(--dark-highlight);
-    color: var(--dark-highlight);
-}
-
-#darkmode-toggle:checked ~ .navbar h1,
-#darkmode-toggle:checked ~ .navbar h2,
-#darkmode-toggle:checked ~ .navbar h3,
-#darkmode-toggle:checked ~ .navbar p,
-#darkmode-toggle:checked ~ .navbar .nav-links a {
     color: var(--dark-text-color);
 }
