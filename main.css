@@ -1737,11 +1737,13 @@ footer {
     filter: none;
 }
 
-#darkmode-toggle:checked+header .navbar .nav-icons img[src*="ri_moon-line.png"] {
+#darkmode-toggle:checked+header .navbar .nav-icons img[src*="ri_moon-line.png"],
+#darkmode-toggle:checked+header .nav-icons .menu-checkbox-container img[src*="ri_apps-2-line.png"] {
     display: none;
 }
 
-#darkmode-toggle:checked+header .navbar .nav-icons #sun-icon {
+#darkmode-toggle:checked+header .navbar .nav-icons #sun-icon,
+#darkmode-toggle:checked+header .navbar .nav-icons .menu-checkbox-container #menu-icon-dark {
     display: inline-block !important;
     filter: none;
 }
