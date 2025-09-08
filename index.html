@@ -1,12 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="main.css">
-    <title>Yoga-Website</title>
+    <!--<link rel="stylesheet" href="mobile.css"> -->
+    <link rel="stylesheet" href="desktop.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Yoga Website</title>
 </head>
+
 <body>
-    
+    <input type="checkbox" id="darkmode-toggle">
+    <header>
+
+        <div class="navbar">
+            <div class="logo">
+                <img src="assets/img/Yoga.png" alt="Fitness Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services 1</a></li>
+                <li><a href="#">Services 2</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <label for="darkmode-toggle" class="dark-mode-label">
+                    <img src="assets/img/ri_moon-line.png" alt="Dark Mode">
+                    <img id="sun-icon" src="assets/img/ri_sun-line.png" alt="Sun icon" style="display: none;">
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>
+                    Choose Your <br>
+                    Best
+                    <div class="yoga-highlight-wrapper"> <span class="highlight">Yoga</span>
+                        <img src="assets/img/home-star.png" alt="Sparkle Icon" class="yoga-sparkle-icon">
+                    </div>
+                    <br> Teacher
+                </h1>
+                <p>Calm your mind and body with the best yoga teachers available. Start your day and stay positive.</p>
+                <a href="#" class="btn">Get Started Free <span class="arrow">→</span></a>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number">300+</span>
+                        <span class="stat-label">Yoga Class</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">40+</span>
+                        <span class="stat-label">Participants</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/img/home-yoga.png" alt="Yoga Pose">
+            </div>
+        </section>
+
+        <section class="info-section">
+            <div class="info-container">
+                <div class="info-card left-card">
+                    <div class="card-content-wrapper">
+                        <div class="info-image-container">
+                            <span class="number">#01</span>
+                            <img src="assets/img/List box.png" alt="Yoga Pose 1">
+                        </div>
+                        <div class="info-text">
+                            <div class="text-content">
+                                <h3>Get a list of specific influencers</h3>
+                                <p>Get a list of specific influencers in your niche and find people who you can focus on
+                                    managing your status.</p>
+                            </div>
+                            <a href="#" class="next-btn-gradient">Next <span class="arrow">→</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card right-card">
+                <div class="card-content-wrapper">
+                    <div class="info-image">
+                        <img src="assets/img/Image group.png" alt="Yoga Pose 2">
+                        <span class="heart-rate"></span>
+                    </div>
+                    <div class="info-content-right">
+                        <div class="text-group">
+                            <h3>Bring Happiness To Good Health!</h3>
+                            <p>If you take care of your good health, take care of your mentality and lead a healthy life
+                                with positive thoughts every day.</p>
+                            <a href="#" class="start-btn-gradient">Let's Start <span class="arrow">→</span></a>
+                        </div>
+                        <div class="courses-count">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <section class="workout-section">
+            <div class="workout-content">
+                <h2>Anytime, Any Place, Any Workout</h2>
+                <p>Take your routine at any time of your day, with the new videos and with the teachers who will guide
+                    you.</p>
+                <a href="#" class="btn">Get Started Free <span class="arrow">→</span></a>
+            </div>
+            <div class="workout-images-container">
+                <div class="workout-image-top">
+                    <img src="assets/img/routine-yoga-1.png" alt="Workout Image 1">
+                    <div class="badge-high-quality">
+                        <span class="icon">▶</span>
+                        High Quality Video
+                    </div>
+                </div>
+                <div class="workout-image-bottom">
+                    <img src="assets/img/routine-yoga-2.png" alt="Workout Image 2">
+                    <div class="badge-trainer">
+                        Professional Trainer
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="follow-us-section">
+            <img class="follow-yoga-1" src="./assets/img/follow-yoga-1.png">
+            <div class="follow-us">
+                <h2>Follow Us On</h2>
+                <h2>Instagram</h2>
+                <h2 id="hashtag">#YOGA</h2>
+                <div class="follow-button">
+                    <p>Follow</p>
+                    <p>→</p>
+                </div>
+            </div>
+            <img class="follow-yoga-2" src="./assets/img/follow-yoga-2.png">
+            <div class="follow-us-section-2">
+                <img class="follow-yoga-3" src="./assets/img/follow-yoga-3.png">
+                <img class="follow-yoga-4" src="./assets/img/follow-yoga-4.png">
+            </div>
+        </div>
+        <div class="newsletter-section">
+            <div>
+                <h3>Join Our newsletter</h3>
+                <p>Subscribe to our newsletter to be aware of many things on discounts, gifts,</p>
+                <p>training and much more. Just enter your email.</p>
+                <span class="email-input">
+                    <input type="email" placeholder="For latest update send mail">
+                    <span class="subscribe">
+                        <p>Subscribe&nbsp;&nbsp;→</p>
+                    </span>
+                </span>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="sub-nav">
+                <div class="footer-logo">
+                    <h3 class="logo">Yoga</h3>
+                    <p>Take care of your health and</p>
+                    <p>your mind with the best Yoga</p>
+                    <p>classes.</p>
+                </div>
+                <div class="address">
+                    <h3>Address</h3>
+                    <p>12345 M/01 Sol</p>
+                    <p>Avenue,Lima, Peru</p>
+                </div>
+                <div class="contact">
+                    <h3>Contact</h3>
+                    <p>+123 456 7890</p>
+                    <p>yoga@email.com</p>
+                </div>
+                <div class="office">
+                    <h3>Office</h3>
+                    <p>Monday - Saturday</p>
+                    <p>9AM - 10PM</p>
+                </div>
+            </div>
+            <hr>
+            <div class="footer-links">
+                <div class="sns-icons">
+                    <ul>
+                        <li><a href="#"><img src="./assets/img/ri_facebook-circle-line.png" alt="Facebook"></a></li>
+                        <li><a href="#"><img src="./assets/img/ri_instagram-line.png" alt="Instagram"></a></li>
+                        <li><a href="#"><img src="./assets/img/ri_twitter-line.png" alt="X"></a></li>
+                        <li><a href="#"><img src="./assets/img/ri_youtube-line.png" alt="Youtube"></a></li>
+                    </ul>
+                </div>
+                <p>&copy; Copyright Bedimcode. All rights reserved</p>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>
