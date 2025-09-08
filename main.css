@@ -92,7 +92,7 @@ p {
 
 .nav-links {
     list-style: none;
-    display: flex;
+    display: none;
     /* opacity: 0; */
     gap: 10px;
 }
@@ -996,6 +996,13 @@ footer {
         gap: 40px;
     }
 
+    #menu-icon,
+    #menu-icon-dark,
+    .menu-dropdown,
+    .menu-checkbox-container {
+        display: none !important;
+    }
+
     .nav-links a {
         text-decoration: none;
         color: var(--text-color);
@@ -1771,16 +1778,15 @@ footer {
     color: var(--font-color-white);
 }
 
-#darkmode-toggle:checked ~ main .workout-section .workout-image-top img,
-#darkmode-toggle:checked ~ main .workout-section .workout-image-bottom img
-{
+#darkmode-toggle:checked~main .workout-section .workout-image-top img,
+#darkmode-toggle:checked~main .workout-section .workout-image-bottom img {
     border-color: var(--dark-bg);
 }
 
-#darkmode-toggle:checked ~ main.follow-us-section .follow-yoga-1,
-#darkmode-toggle:checked ~ main.follow-us-section .follow-yoga-2,
-#darkmode-toggle:checked ~ main.follow-us-section .follow-yoga-3,
-#darkmode-toggle:checked ~ main.follow-us-section .follow-yoga-4 {
+#darkmode-toggle:checked~main.follow-us-section .follow-yoga-1,
+#darkmode-toggle:checked~main.follow-us-section .follow-yoga-2,
+#darkmode-toggle:checked~main.follow-us-section .follow-yoga-3,
+#darkmode-toggle:checked~main.follow-us-section .follow-yoga-4 {
     border-color: var(--dark-card-bg);
 }
 
